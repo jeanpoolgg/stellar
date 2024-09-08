@@ -3,7 +3,7 @@ const Player = function(game, x, y, playerName) {
     this.game = game;
     this.sprite = game.add.sprite(x, y, 'nave');
     this.sprite.anchor.setTo(0.5);
-    this.sprite.scale.setTo(0.15, 0.15);
+    this.sprite.scale.setTo(0.05, 0.05);
     game.physics.arcade.enable(this.sprite);
     this.sprite.body.collideWorldBounds = true;
 
