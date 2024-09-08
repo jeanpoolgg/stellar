@@ -1,5 +1,5 @@
 // player.js
-var Player = function(game, x, y, playerName) {
+const Player = function(game, x, y, playerName) {
     this.game = game;
     this.sprite = game.add.sprite(x, y, 'nave');
     this.sprite.anchor.setTo(0.5);
@@ -42,8 +42,8 @@ var Player = function(game, x, y, playerName) {
     this.barBackground.drawRect(0, game.height - this.barHeight, game.width, this.barHeight);
     this.barBackground.endFill();
 
-// Crear el texto de puntaje y nombre del jugador en la parte inferior izquierda
-this.textoNombreYPuntos = game.add.text(20, game.height - this.barHeight + 20, `${this.nombre}: Puntos: 0`, { font: '20px Arial', fill: '#ffffff' });
+    // Crear el texto de puntaje y nombre del jugador en la parte inferior izquierda
+    this.textoNombreYPuntos = game.add.text(20, game.height - this.barHeight + 20, `${this.nombre} - Puntos: 0`, { font: '16px Arial', fill: '#ffffff' });
 
 
     // Crear la barra de vida en la parte inferior derecha
@@ -120,5 +120,5 @@ Player.prototype.reducirVida = function(damage) {
 
 Player.prototype.actualizarPuntos = function(puntos) {
     this.puntos += puntos;
-    this.textoNombreYPuntos.text = `${this.nombre}: Puntos: ${this.puntos}`; // Actualiza el texto con el nombre y puntaje
+    this.textoNombreYPuntos.text = `${this.nombre} - Puntos: ${this.puntos}`; // Actualiza el texto con el nombre y puntaje
 };
